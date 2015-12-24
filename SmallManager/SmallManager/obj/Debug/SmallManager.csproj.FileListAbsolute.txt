@@ -11,3 +11,5 @@ D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\S
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.csproj.GenerateResource.Cache
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.exe
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.pdb
+D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager_MarkupCompile.lref
