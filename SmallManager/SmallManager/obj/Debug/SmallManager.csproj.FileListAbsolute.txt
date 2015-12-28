@@ -2,8 +2,6 @@ D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\bin\Debug\S
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\bin\Debug\SmallManager.exe
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\bin\Debug\SmallManager.pdb
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.csprojResolveAssemblyReference.cache
-D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\MainWindow.baml
-D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\MainWindow.g.cs
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\App.g.cs
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager_MarkupCompile.cache
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.g.resources
@@ -13,3 +11,5 @@ D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\S
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager.pdb
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\SmallManager_MarkupCompile.lref
+D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\View\MainWindow.g.cs
+D:\Pr\study\Nozd\InformWindow\SmallManager\SmallManager\SmallManager\obj\Debug\View\MainWindow.baml
