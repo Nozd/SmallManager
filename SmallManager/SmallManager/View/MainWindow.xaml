@@ -20,27 +20,39 @@
         <local:Production x:Key="Production"></local:Production>
     </Window.Resources>
 
-    <Grid>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*" />
-            <RowDefinition Height="10" />
             <RowDefinition Height="100*" />
         </Grid.RowDefinitions>
-        
-        <DataGrid Grid.Row="0" AutoGenerateColumns="False"
+        <GroupBox Header="Заявки на просчёт" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <DataGrid AutoGenerateColumns="False"
                   ItemsSource="{Binding Calc}" 
                   SelectedItem="{Binding SelectedCalc}" 
                   HorizontalAlignment="Left" 
                   Margin="5,0,0,0">
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ответственный за проработку" Binding="{Binding Analysis}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Состояние" Binding="{Binding Adjustment}"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Ответственный за проработку" Binding="{Binding Analysis}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Состояние" Binding="{Binding Adjustment}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+         </GroupBox>
+        <GroupBox Header="Заявки на производство" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="2" AutoGenerateColumns="False" Name="DataGrid2"
+                <DataGrid Grid.Row="2" AutoGenerateColumns="False" Name="DataGrid2"
                   ItemsSource="{Binding Source={StaticResource Production}, Path=ProductionList}" Margin="0,0,21,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
@@ -53,8 +65,10 @@
                                         ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
                                         SelectedValueBinding="{Binding StepOfProduct}">
                                         </DataGridComboBoxColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-
+                </DataGrid.Columns>
+            </DataGrid>
+                </Grid>
+            </GroupBox>
+    
     </Grid>
 </Window>
