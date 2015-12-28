@@ -1,0 +1,60 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SmallManager"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        x:Class="SmallManager.ViewModel.MainWindow" WindowStartupLocation="CenterScreen"
+        Title="Менеджер заявок" Height="350" Width="1160.625"
+        DataContext="{DynamicResource ViewModelMain}">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:stepOfProduct"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <local:ViewModelMain x:Key="ViewModelMain"/>
+        <local:Calculation x:Key="Calculation"></local:Calculation>
+        <local:Production x:Key="Production"></local:Production>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Calc}" 
+                  SelectedItem="{Binding SelectedCalc}" 
+                  HorizontalAlignment="Left" 
+                  Margin="5,0,0,0">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ответственный за проработку" Binding="{Binding Analysis}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Состояние" Binding="{Binding Adjustment}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" Name="DataGrid2"
+                  ItemsSource="{Binding Source={StaticResource Production}, Path=ProductionList}" Margin="0,0,21,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ответственный за проработку" Binding="{Binding Analysis}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Состояние" Binding="{Binding Adjustment}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Заявка на материалы" Binding="{Binding RequestMaterials}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Чертежи, развёртки" Binding="{Binding Program}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Программы" Binding="{Binding Program}"></DataGridTextColumn>
+                <DataGridComboBoxColumn Header="Этапы изготовления" 
+                                        ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                                        SelectedValueBinding="{Binding StepOfProduct}">
+                                        </DataGridComboBoxColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
