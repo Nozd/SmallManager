@@ -52,14 +52,18 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <DataGrid Grid.Row="2" AutoGenerateColumns="False" Name="DataGrid2"
-                  ItemsSource="{Binding Source={StaticResource Production}, Path=ProductionList}" Margin="0,0,21,0">
+                <DataGrid Grid.Row="2" AutoGenerateColumns="False" 
+                          Name="DataGrid2"
+                          ItemsSource="{Binding Prod}" 
+                          SelectedItem="{Binding SelectedCalc}" 
+                          HorizontalAlignment="Left" 
+                          Margin="5,0,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер заявки" Binding="{Binding NumberOrder}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Ответственный за проработку" Binding="{Binding Analysis}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Состояние" Binding="{Binding Adjustment}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Заявка на материалы" Binding="{Binding RequestMaterials}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Чертежи, развёртки" Binding="{Binding Program}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Чертежи, развёртки" Binding="{Binding Drawing}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Программы" Binding="{Binding Program}"></DataGridTextColumn>
                 <DataGridComboBoxColumn Header="Этапы изготовления" 
                                         ItemsSource="{Binding Source={StaticResource dataFromEnum}}"

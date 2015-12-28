@@ -11,8 +11,10 @@ namespace SmallManager
     class ViewModelMain: ViewModelBase
     {
         public ObservableCollection<Calculation> Calc { get; set; }
+        public ObservableCollection<Production> Prod { get; set; }
 
         object _SelectedCalc;
+        object _SelectedProd;
         public object SelectedCalc
         {
             get
@@ -25,6 +27,21 @@ namespace SmallManager
                 {
                     _SelectedCalc = value;
                     RaisePropertyChanged("SelectedCalc");
+                }
+            }
+        }
+        public object SelectedProd
+        {
+            get
+            {
+                return _SelectedProd;
+            }
+            set
+            {
+                if (_SelectedProd != value)
+                {
+                    _SelectedProd = value;
+                    RaisePropertyChanged("SelectedProd");
                 }
             }
         }
@@ -53,22 +70,23 @@ namespace SmallManager
         {
             DemoFakeDB demoFakeDb = new DemoFakeDB();
             Calc = demoFakeDb.CalculationList;
+            Prod = demoFakeDb.ProductionList;
             TextProperty1 = "Type here";
 
-            AddUserCommand = new RelayCommand(AddUser);
+            //AddUserCommand = new RelayCommand(AddUser);
         }
 
-        void AddUser(object parameter)
-        {
-            if (parameter == null) return;
-            Calc.Add(new Calculation
-            {
-                NumberOrder = parameter.ToString(),
-                Analysis = parameter.ToString(),
-                Adjustment = parameter.ToString()
-                //FirstName = parameter.ToString(), LastName = parameter.ToString(), Age = DateTime.Now.Second
-            });
-        }
+        //void AddUser(object parameter)
+        //{
+        //    if (parameter == null) return;
+        //    Calc.Add(new Calculation
+        //    {
+        //        NumberOrder = parameter.ToString(),
+        //        Analysis = parameter.ToString(),
+        //        Adjustment = parameter.ToString()
+        //        //FirstName = parameter.ToString(), LastName = parameter.ToString(), Age = DateTime.Now.Second
+        //    });
+        //}
 
     }
 }
